@@ -1,7 +1,7 @@
 {
   "domain": "askey_rtl6300_5g_cpe",
   "name": "ASKEY RTL6300 5G CPE",
-  "version": "1.1.0",
+  "version": "1.2.1",
   "documentation": "https://github.com/cretudorin/askey_rtl6300_5g_cpe",
   "requirements": [
     "aiohttp"

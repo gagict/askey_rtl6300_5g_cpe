@@ -1,3 +1,5 @@
+> **Fork note:** this is a fork of [cretudorin/askey_rtl6300_5g_cpe](https://github.com/cretudorin/askey_rtl6300_5g_cpe) with bug fixes — see [CHANGELOG.md](CHANGELOG.md).
+
 # ASKEY RTL6300-D354 5G CPE Integration
 
 Custom integration to monitor and control the ASKEY RTL6300 5G CPE router via REST API.

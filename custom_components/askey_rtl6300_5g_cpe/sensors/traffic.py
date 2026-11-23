@@ -3,6 +3,31 @@ from homeassistant.const import UnitOfInformation
 from .base_sensor import AskeyBaseSensor
 
 
+def _to_gb(raw):
+    """Convert 'X.XXMB' / 'X.XXKB' / 'X.XXGB' / numbers to gigabytes."""
+    if raw is None:
+        return None
+    if isinstance(raw, (int, float)):
+        return round(float(raw), 3)
+    s = str(raw).strip().replace(",", ".")
+    for unit, factor in (
+        ("TB", 1024.0),
+        ("GB", 1.0),
+        ("MB", 1.0 / 1024),
+        ("KB", 1.0 / 1048576),
+        ("B", 1.0 / 1073741824),
+    ):
+        if s.upper().endswith(unit):
+            try:
+                return round(float(s[: -len(unit)].strip()) * factor, 3)
+            except ValueError:
+                return None
+    try:
+        return round(float(s), 3)
+    except ValueError:
+        return None
+
+
 class AskeyMonthlyRxSensor(AskeyBaseSensor):
     """
     Sensor for monitoring the monthly received traffic (RX).
@@ -23,7 +48,7 @@ class AskeyMonthlyRxSensor(AskeyBaseSensor):
         return safe_get_property(
             self.coordinator.data,
             ["traffic_monthly", "rx"],
-            lambda raw: float(raw.replace("GB", "")),
+            _to_gb,
         )
 
     @property
@@ -54,7 +79,7 @@ class AskeyMonthlyTxSensor(AskeyBaseSensor):
         return safe_get_property(
             self.coordinator.data,
             ["traffic_monthly", "tx"],
-            lambda raw: float(raw.replace("GB", "")),
+            _to_gb,
         )
 
     @property
@@ -85,7 +110,7 @@ class AskeyMonthlyTotalSensor(AskeyBaseSensor):
         return safe_get_property(
             self.coordinator.data,
             ["traffic_monthly", "total"],
-            lambda raw: float(raw.replace("GB", "")),
+            _to_gb,
         )
 
     @property
