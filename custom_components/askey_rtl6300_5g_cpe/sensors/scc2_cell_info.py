@@ -6,7 +6,7 @@ not worth using safe_get_property
 """
 
 
-class AskeyScc1PciSensor(AskeyBaseSensorDiagnostic):
+class AskeyScc2PciSensor(AskeyBaseSensorDiagnostic):
     """
     Sensor for monitoring the Physical Cell Identity (PCI) of SCC2.
     PCI is used to identify the specific cell within a network.
@@ -32,7 +32,7 @@ class AskeyScc1PciSensor(AskeyBaseSensorDiagnostic):
         }
 
 
-class AskeyScc1RssiSensor(AskeyBaseSensorDiagnostic):
+class AskeyScc2RssiSensor(AskeyBaseSensorDiagnostic):
     """
     Sensor for monitoring the Received Signal Strength Indicator (RSSI) of SCC2.
     RSSI measures the power level of the received signal, indicating signal strength.
@@ -63,7 +63,7 @@ class AskeyScc1RssiSensor(AskeyBaseSensorDiagnostic):
         }
 
 
-class AskeyScc1RsrpSensor(AskeyBaseSensorDiagnostic):
+class AskeyScc2RsrpSensor(AskeyBaseSensorDiagnostic):
     """
     Sensor for monitoring the Reference Signal Received Power (RSRP) of SCC2.
     RSRP indicates the strength of the reference signal, which is important for connection stability.
@@ -94,7 +94,7 @@ class AskeyScc1RsrpSensor(AskeyBaseSensorDiagnostic):
         }
 
 
-class AskeyScc1RsrqSensor(AskeyBaseSensorDiagnostic):
+class AskeyScc2RsrqSensor(AskeyBaseSensorDiagnostic):
     """
     Sensor for monitoring the Reference Signal Received Quality (RSRQ) of SCC2.
     RSRQ is a measure of signal quality, combining signal strength and interference.
@@ -125,7 +125,7 @@ class AskeyScc1RsrqSensor(AskeyBaseSensorDiagnostic):
         }
 
 
-class AskeyScc1SinrSensor(AskeyBaseSensorDiagnostic):
+class AskeyScc2SinrSensor(AskeyBaseSensorDiagnostic):
     """
     Sensor for monitoring the Signal to Interference plus Noise Ratio (SINR) of SCC2.
     SINR measures the quality of the received signal relative to interference and noise.
@@ -156,7 +156,7 @@ class AskeyScc1SinrSensor(AskeyBaseSensorDiagnostic):
         }
 
 
-class AskeyScc1BandSensor(AskeyBaseSensorDiagnostic):
+class AskeyScc2BandSensor(AskeyBaseSensorDiagnostic):
     """
     Sensor for monitoring the cellular frequency band of SCC2.
     The band determines the frequency range for communication.
@@ -179,7 +179,7 @@ class AskeyScc1BandSensor(AskeyBaseSensorDiagnostic):
         return {"Description": "Cellular frequency band of SCC2.", "Unit": "None"}
 
 
-class AskeyScc1BandwSensor(AskeyBaseSensorDiagnostic):
+class AskeyScc2BandwSensor(AskeyBaseSensorDiagnostic):
     """
     Sensor for monitoring the bandwidth (in MHz) of SCC2.
     The bandwidth indicates the width of the frequency band used for communication.
@@ -207,7 +207,7 @@ class AskeyScc1BandwSensor(AskeyBaseSensorDiagnostic):
         return {"Description": "Bandwidth of SCC2 in megahertz (MHz).", "Unit": "MHz"}
 
 
-class AskeyScc1RxchSensor(AskeyBaseSensorDiagnostic):
+class AskeyScc2RxchSensor(AskeyBaseSensorDiagnostic):
     """
     Sensor for monitoring the receive channel (RX) of SCC2.
     This channel is used for receiving data in the network.
@@ -234,7 +234,7 @@ class AskeyScc1RxchSensor(AskeyBaseSensorDiagnostic):
         return {"Description": "Receive Channel for SCC2.", "Unit": "None"}
 
 
-class AskeyScc1TxchSensor(AskeyBaseSensorDiagnostic):
+class AskeyScc2TxchSensor(AskeyBaseSensorDiagnostic):
     """
     Sensor for monitoring the transmit channel (TX) of SCC2.
     This channel is used for sending data to the network.
@@ -261,7 +261,7 @@ class AskeyScc1TxchSensor(AskeyBaseSensorDiagnostic):
         return {"Description": "Transmit Channel for SCC2.", "Unit": "None"}
 
 
-class AskeyScc1RxfreqSensor(AskeyBaseSensorDiagnostic):
+class AskeyScc2RxfreqSensor(AskeyBaseSensorDiagnostic):
     """
     Sensor for monitoring the receive frequency (RX) of SCC2 in megahertz (MHz).
     This frequency is used for receiving signals from the network.
@@ -292,7 +292,7 @@ class AskeyScc1RxfreqSensor(AskeyBaseSensorDiagnostic):
         }
 
 
-class AskeyScc1TxfreqSensor(AskeyBaseSensorDiagnostic):
+class AskeyScc2TxfreqSensor(AskeyBaseSensorDiagnostic):
     """
     Sensor for monitoring the transmit frequency (TX) of SCC2 in megahertz (MHz).
     This frequency is used for transmitting signals to the network.

@@ -1,5 +1,12 @@
 # Changelog
 
+## 1.3.1 (fork)
+
+### Fixed
+- 1.3.0 shipped `scc2_cell_info.py` with class names still called `AskeyScc1*`,
+  causing `ImportError: cannot import name 'AskeyScc2PciSensor'` and the whole
+  integration failing to set up. Class names corrected to `AskeyScc2*`.
+
 ## 1.3.0 (fork)
 
 ### Added
