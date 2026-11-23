@@ -1,5 +1,19 @@
 # Changelog
 
+## 1.3.0 (fork)
+
+### Added
+
+- **SCC2 sensors** (`sensors/scc2_cell_info.py`): the third LTE carrier (index 2 of
+  `cellular_info_ex`) is now exposed like PCC and SCC1 — band, bandwidth, RSRP, RSRQ,
+  SINR, PCI, RX/TX channel and RX/TX frequency. On Telemach this is usually B20
+  (800 MHz). Upstream only read carriers 0 and 1.
+
+### Fixed (from 1.2.1/1.2.2)
+
+- `traffic.py` — parse `8.26MB` / `694.38KB` unit strings.
+- `pcc_cell_info.py` — PCC Band / Bandwidth returned `None`.
+
 ## 1.2.1 (fork)
 
 Fork of [cretudorin/askey_rtl6300_5g_cpe](https://github.com/cretudorin/askey_rtl6300_5g_cpe) (v1.2.0).

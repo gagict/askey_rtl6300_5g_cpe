@@ -59,6 +59,19 @@ from .sensors.pcc_cell_info import (
     AskeyPccTxfreqSensor,
 )
 
+from .sensors.scc2_cell_info import (
+    AskeyScc2PciSensor,
+    AskeyScc2RssiSensor,
+    AskeyScc2RsrpSensor,
+    AskeyScc2RsrqSensor,
+    AskeyScc2SinrSensor,
+    AskeyScc2BandSensor,
+    AskeyScc2BandwSensor,
+    AskeyScc2RxchSensor,
+    AskeyScc2TxchSensor,
+    AskeyScc2RxfreqSensor,
+    AskeyScc2TxfreqSensor,
+)
 from .sensors.scc1_cell_info import (
     AskeyScc1PciSensor,
     AskeyScc1RssiSensor,
@@ -154,6 +167,17 @@ async def async_setup_entry(hass, config_entry, async_add_entities):
             AskeyScc1TxchSensor(coordinator),
             AskeyScc1RxfreqSensor(coordinator),
             AskeyScc1TxfreqSensor(coordinator),
+            AskeyScc2PciSensor(coordinator),
+            AskeyScc2RssiSensor(coordinator),
+            AskeyScc2RsrpSensor(coordinator),
+            AskeyScc2RsrqSensor(coordinator),
+            AskeyScc2SinrSensor(coordinator),
+            AskeyScc2BandSensor(coordinator),
+            AskeyScc2BandwSensor(coordinator),
+            AskeyScc2RxchSensor(coordinator),
+            AskeyScc2TxchSensor(coordinator),
+            AskeyScc2RxfreqSensor(coordinator),
+            AskeyScc2TxfreqSensor(coordinator),
             # Traffic statistics
             AskeyTxBytesSensor(coordinator),
             AskeyRxBytesSensor(coordinator),

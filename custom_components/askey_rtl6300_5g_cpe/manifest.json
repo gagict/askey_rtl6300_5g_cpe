@@ -1,7 +1,7 @@
 {
   "domain": "askey_rtl6300_5g_cpe",
   "name": "ASKEY RTL6300 5G CPE",
-  "version": "1.2.2",
+  "version": "1.3.0",
   "documentation": "https://github.com/gagict/askey_rtl6300_5g_cpe",
   "requirements": [
     "aiohttp"
