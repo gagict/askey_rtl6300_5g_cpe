@@ -1,5 +1,13 @@
 # Changelog
 
+## 1.3.2 (fork)
+
+### Fixed
+- `send_sms` crashed with `'int' object has no attribute 'replace'` when the
+  phone number came from a template that rendered to a number.
+- Phone numbers are now normalized to E.164: `0991234567` -> `+385991234567`,
+  `0038599...` -> `+38599...`, numbers without `+` get one.
+
 ## 1.3.1 (fork)
 
 ### Fixed

@@ -177,9 +177,24 @@ class AskeyUtils:
     async def handle_send_sms(self, call: ServiceCall):
         phone_number = call.data.get("phone_number")
         message = call.data.get("message")
+
+        # templates may render numbers as int/float - normalize to string
+        phone_number = str(phone_number).strip() if phone_number is not None else ""
+        message = str(message).strip() if message is not None else ""
+
         if not phone_number or not message:
             _LOGGER.error("Phone number and message are required.")
             return
+
+        # normalize common local formats to E.164 (HR)
+        digits = phone_number.replace(" ", "").replace("-", "")
+        if digits.startswith("00"):
+            digits = "+" + digits[2:]
+        elif digits.startswith("0") and not digits.startswith("00"):
+            digits = "+385" + digits[1:]
+        elif not digits.startswith("+"):
+            digits = "+" + digits
+        phone_number = digits
 
         encoded_phone = phone_number.replace("+", "%2B")
         body = {"tagid": "", "phone_nums": encoded_phone, "message": message}
